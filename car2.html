@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>熱門車款</title>
+<script src="jquery-3.2.1.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+<!-- Begin
+function createHexArray(n) {
+this.length = n;
+for (var i = 1; i <= n; i++)
+this[i] = i - 1;
+
+
+this[11] = "A";
+this[12] = "B";
+this[13] = "C";
+this[14] = "D";
+this[15] = "E";
+this[16] = "F";
+return this;
+}
+hx = new createHexArray(16);
+
+
+function convertToHex(x) {
+if (x < 17) x = 16;
+var high = x / 16;
+var s = high+"";
+s = s.substring(0, 2);
+high = parseInt(s, 10);
+var left = hx[high + 1];
+var low = x - high * 16;
+if (low < 1) low = 1;
+s = low + "";
+s = s.substring(0, 2);
+low = parseInt(s, 10);
+var right = hx[low + 1];
+var string = left + "" + right;
+return string;
+}
+
+
+function makeRainbow(text) {
+text = text.substring(0, text.length);
+color_d1 = 255;
+mul = color_d1 / text.length;
+for(var i = 0; i < text.length; i++) {
+color_d1 = 255*Math.sin(i / (text.length / 3));
+color_h1 = convertToHex(color_d1);
+color_d2 = mul * i;
+color_h2 = convertToHex(color_d2);
+
+
+k = text.length;
+j = k - i;
+if (j < 0) j = 0;
+color_d3 = mul * j;
+color_h3 = convertToHex(color_d3);
+
+
+document.write("<FONT COLOR=\"#" + color_h3 + color_h1 + color_h2 + "\">" + text.substring(i, i + 1) + "</FONT>");
+   }
+}
+// End -->
+</script>
+
+
+<style type="text/css">
+#p1 { font-size: 30pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+
+#a { font-size: 20pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+html {
+            height: 100%;
+        }
+body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+   $('p.more').hide();
+   $('p.car').hide();
+   $('p.car1').hide();
+   $('p.car2').hide();
+   $('p.car3').hide();
+   $('a.short').hide();
+   $('a.more1').click(function() {
+      $('p.more').show('slow');
+      $(this).hide();
+      $('a.more2').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more2').click(function() {
+      $('p.car').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more3').click(function() {
+      $('p.car1').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more2').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more4').click(function() {
+      $('p.car2').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more2').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more5').click(function() {
+      $('p.car3').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.short').show();
+      return false;
+   });
+
+   $('a.short').click(function() {
+      $('p.more').hide('500');
+      $('p.car').hide('500');
+      $('p.car1').hide('500');
+      $('p.car2').hide('500');
+      $('p.car3').hide('500');
+      $('a').show();
+      $(this).hide();
+      return false;
+   });
+});
+
+
+             //循序播放陣列中指定的圖檔
+            var jsImg = new Array("images/hcar00.jpg","images/hcar01.jpg","images/hcar02.jpg","images/hcar03.jpg",
+            "images/hcar04.jpg",);
+            var jsImg_len = jsImg.length;  // 圖檔數量
+            // 要用另一個變數存，是不想在 function 中每次都要算陣列的大小
+            var i=2;                       //起始照片  2 為 003.jpg
+            //設定每兩秒執行一次sequentialImg() ，此行要在 function 之外
+            setInterval("sequentialImg()",2000);
+            function sequentialImg(){  //循序播放
+                document.getElementById("my_div").innerHTML  = "<img src='"+jsImg[i]+"' width=1000 height=500>";
+                    i++;
+                    if(i>=jsImg_len)  i=0;
+            }
+
+    </script>
+</head>
+<body  background="images\bake.jpg" onload="sequentialImg();">
+
+<p id="p1">熱門車款</p>
+<center>
+<strong>
+<font size=6>
+<script>
+<!--
+makeRainbow("歡迎到本展覽室");
+// -->
+</script>
+</font>
+</strong>
+</center>
+</BODY>
+
+
+<center><div id="my_div" ></div></center> <!—把前面這個 div 放到你想輪播圖片的位置去 -->
+<div>
+<center><p>本頁展示的車子分別是FIT．HR-V．ODYSSEY．CITY．PRIUS．CR-V</p>
+<p class="more"id="p2">FIT分別1.5VTi-S．1.5S．2個版本<br>
+                               售價分別是．65.9萬．68.9萬<br>
+                               詳細規則請到各區Honda的服務廠或是官網查詢</p>
+
+<p class="car"id="p2">HR-V分別有VTi．VTi-S．S．3個版本<br>
+                               售價分別是．74.9萬．78.9萬．84.9萬．101.9萬<br>
+                               詳細規則請到各區Honda的服務廠或是官網查詢</p>
+<p class="car1"id="p2">ODYSSEY分別有ELITE．APEX(8人座)．APEX(7人座)<br>
+                               售價分別是．143.9萬．166.8萬．168.8萬<br>
+                               詳細規則請到各區Honda的服務廠或是官網查詢</p>
+<p class="car2"id="p2">CITY分別有1.5VTi．1.5VTi-S．2個版本<br>
+                               售價分別是．62.9萬．66.9萬<br>
+                               詳細規則請到各區Honda的服務廠或是官網查詢</p>
+<p class="car3"id="p2">CR-V分別有1.5S．1.5VTi-S．1.5VTi．3個版本<br>
+                               售價分別是．113萬．99萬．91.9萬<br>
+                               詳細規則請到各區Honda的服務廠或是官網查詢</p>
+
+
+
+
+<center><a id="a1"href="#" class="more1">FIT的售價內容</a>
+<a id="a1"href="#" class="more2">HR-V的售價內容</a>
+<a id="a1"href="#" class="more3">ODYSSEY的售價內容</a>
+<a id="a1"href="#" class="more4">CITY的售價內容</a>
+<a id="a1"href="#" class="more5">CR-V的售價內容</a>
+<a id="a1" href="#" class="short">返回</a></center>
+<script language="JavaScript">
+<!--  Hide me please!
+
+function SelectIt(){
+        if (document.Links.Select.options[document.Links.Select.selectedIndex].value != "none"){
+        location = document.Links.Select.options[document.Links.Select.selectedIndex].value}
+}
+//-->
+
+</script>
+<form name="Links">
+<div align="center"><center><p><select NAME="Select" onchange="SelectIt()" size="1">
+<option value="none">到其他展覽間</option>
+<option value="car1.html">TOYOTA熱門車款</option>
+<option value="car4.html">NISSAN熱門車款</option>
+<option value="car3.html">FORD熱門車款</option>
+
+</select></p>
+</center></div>
+</form>
+<script
+language="JavaScript">
+document.write("您的瀏覽器是"+navigator.appName);
+document.write("<br>您的瀏覽器版本是"+navigator.appVersion);
+</script>
+
+
+
+
+
+<p id="p1"><a href="index.html">返回主頁面</a></p>
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>熱門車款</title>
+<script src="jquery-3.2.1.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+
+//時間
+var timer = null;
+// 顯示數字圖片
+function displayClock(num) {
+  var dig = parseInt(num/10);
+  var timetag="<img src='images//" + dig + ".gif'>";
+  dig = num%10;
+  timetag +="<img src='images//" + dig + ".gif'>";
+  return timetag;
+}
+// 停止計時
+function stopClock() {
+   clearTimeout(timer);
+}
+// 開始計時
+function startClock() {
+   var time = new Date();
+   // 取得時間
+   var hours = displayClock(time.getHours()) + ":";
+   var minutes = displayClock(time.getMinutes()) + ":";
+   var seconds = displayClock(time.getSeconds());
+   // 顯示時間
+   show.innerHTML = hours + minutes + seconds;
+   timer = setTimeout("startClock()",1000);
+}
+
+var message = new Array();
+message[0] = "歡迎光臨";
+message[1] = "迎";
+message[2] = "光";
+message[3] = "臨";
+var reps = 1;
+var speed = 250;
+var p = message.length;
+var T = "";
+var C = 0;
+var mC = 0;
+var s = 0;
+var sT = null;
+if (reps < 1) reps = 1;
+function doTheThing() {
+T = message[mC];
+A();
+}
+function A() {
+s++;
+if (s > 8) { s = 1;}
+// you can fiddle with the patterns here...
+if (s == 1) { document.title = '【*(^.^)*-------】 '+T+' -----'; }
+if (s == 2) { document.title = '【--*(^.^)*-----】 '+T+' -----'; }
+if (s == 3) { document.title = '【---*(^.^)*----】 '+T+' -----'; }
+if (s == 4) { document.title = '【------*(^.^)*-】 '+T+' -----'; }
+if (s == 5) { document.title = '【-------*(^.^)*】 '+T+' -----'; }
+if (s == 6) { document.title = '【------*(^.^)*-】 '+T+' -----'; }
+if (s == 7) { document.title = '【--*(^.^)*-----】 '+T+' -----'; }
+if (s == 8) { document.title = '【----*(^.^)*---】 '+T+' -----'; }
+if (C < (8 * reps)) {
+sT = setTimeout("A()", speed);
+C++;
+}
+else {
+C = 0;
+s = 0;
+mC++;
+if(mC > p - 1) mC = 0;
+sT = null;
+doTheThing();
+}
+}
+doTheThing();
+
+             //循序播放陣列中指定的圖檔
+            var jsImg = new Array("images/ncar00.jpg","images/ncar01.jpg","images/ncar02.jpg","images/ncar03.jpg",
+            "images/ncar04.jpg","images/ncar05.jpg",);
+            var jsImg_len = jsImg.length;  // 圖檔數量
+            // 要用另一個變數存，是不想在 function 中每次都要算陣列的大小
+            var i=2;                       //起始照片  2 為 003.jpg
+            //設定每兩秒執行一次sequentialImg() ，此行要在 function 之外
+            setInterval("sequentialImg()",2000);
+            function sequentialImg(){  //循序播放
+                document.getElementById("my_div").innerHTML  = "<img src='"+jsImg[i]+"' width=1000 height=500>";
+                    i++;
+                    if(i>=jsImg_len)  i=0;
+            }
+
+</script>
+<script>
+$(document).ready(function() {
+   $('p.more').hide();
+   $('p.car').hide();
+   $('p.car1').hide();
+   $('p.car2').hide();
+   $('p.car3').hide();
+   $('p.car4').hide();
+   $('a.short').hide();
+   $('a.more1').click(function() {
+      $('p.more').show('slow');
+      $(this).hide();
+      $('a.more2').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more2').click(function() {
+      $('p.car').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more3').click(function() {
+      $('p.car1').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more2').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more4').click(function() {
+      $('p.car2').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more2').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more5').click(function() {
+      $('p.car3').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.more6').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more6').click(function() {
+      $('p.car4').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.short').click(function() {
+      $('p.more').hide('500');
+      $('p.car').hide('500');
+      $('p.car1').hide('500');
+      $('p.car2').hide('500');
+      $('p.car3').hide('500');
+      $('p.car4').hide('500');
+      $('a').show();
+      $(this).hide();
+      return false;
+   });
+});
+</script>
+<style type="text/css">
+#p1 { font-size: 30pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+
+#a{ font-size: 20pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+html {
+            height: 100%;
+        }
+body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+
+
+</style>
+</head>
+<body >
+<p id="p1">熱門車款</p>
+<center><div id="my_div" ></div></center>
+<div>
+<center><p>本頁展示的車子分別是ALL NEW LIVINA．SENTRA．ALL NEW TEANA．X-TRAIL．TIIDA．MARCH。</p>
+<p class="more"id="p2">分別有行家版．行家皮椅版．豪華版．旗艦版<br>
+                       售價分別是．59.9萬．60.9萬．63.5萬．66.5萬<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+
+<p class="car"id="p2">分別有豪華版．旗艦版．尊爵版<br>
+                       售價分別是．69.9萬．74.5萬．79.9萬<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+<p class="car1"id="p2">分別有2.0 TA 傳奇版．2.0 TA 豪華版．2.5 LD 豪華版．2.5 LD 豪華影音版<br>
+                       售價分別是．84.9萬．89.9萬．93.9萬．101.9萬<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+<p class="car2"id="p2">分別有2.0 2WD 經典版．2.0 2WD 玩美影音版．2.5 2WD 豪華影音版．2.5 4WD 旗艦科技版<br>
+                       售價分別是．87.9萬．94.9萬．105.9萬．116.9萬<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+<p class="car3"id="p2">分別有自然進氣 傳奇版．自然進氣 豪華版．自然進氣 旗艦版．TURBO版<br>
+                       售價分別是．65.9萬．68.9萬．73.9萬．90.9萬．<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+<p class="car4"id="p2">分別有傳奇版．豪華版．旗艦版<br>
+                       售價分別是．53.5萬．56.8萬．58.8萬<br>
+                       詳細規則請到各區NISSAN的服務廠或是官網查詢</p>
+
+
+
+
+<center><a id="a1"href="#" class="more1">ALL NEW LIVINA的售價內容</a>
+<a id="a1"href="#" class="more2">SENTRA的售價內容</a>
+<a id="a1"href="#" class="more3">ALL NEW TEANA的售價內容</a>
+<a id="a1"href="#" class="more4">X-TRAIL的售價內容</a>
+<a id="a1"href="#" class="more5">TIIDA的售價內容</a>
+<a id="a1"href="#" class="more6">MARCH的售價內容</a>
+<a id="a1" href="#" class="short">返回</a></center><br>
+<center>現在時間:<div id="show"></div></center>
+<DIV ID="SHOW" style="position:absolute;">
+<TABLE CELLSPACING=0 CELLPADDING=3 BORDER=1 BGCOLOR="Silver">
+<TH><A HREF="#" onClick="moveOnMenu();moveOffShow();"><SMALL>顯示</SMALL></A></TH>
+</TABLE></DIV>
+<DIV ID="MENU" style="position:absolute;">
+<TABLE CELLSPACING=0 CELLPADDING=3 BORDER=1 BGCOLOR="Silver">
+<TR><TH><A HREF="#" onClick="moveOffMenu();moveOnShow();"><SMALL>隱藏</SMALL></A></TH></TR>
+<TR><TD><UL>
+<LI><A HREF="ca1.html"><SMALL>TOYOTA熱門車款</SMALL></A>
+<LI><A HREF="ca2.html"><SMALL>HONDA熱門車款</SMALL></A>
+<LI><A HREF="ca3.html"><SMALL>FORD熱門車款</SMALL></A>
+</UL></TD></TR></TABLE></DIV>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var OffX = -150;
+var PosX = 10;
+var PosY = 100;
+var speed = 1;
+var increment = 1;
+var is_NS = navigator.appName=="Netscape";
+var is_Ver = parseInt(navigator.appVersion);
+var is_NS4 = is_NS&&is_Ver>=4&&is_Ver<5;
+var is_NS5up = is_NS&&is_Ver>=5;
+//var sPosX = OffX;
+//var sOffX = PosX;
+//var MenuX = sOffX;
+//var SelX = sPosX;
+var MenuX = OffX;
+var SelX = PosX;
+var sPosX = PosX;
+var sOffX = OffX;
+
+if (is_NS4) {
+  increment = 5;
+  Lq = "document.layers.";
+  Sq = "";
+  eval(Lq+'SHOW'+Sq+'.left=sPosX');
+  eval(Lq+'MENU'+Sq+'.left=sOffX');
+  eval(Lq+'SHOW'+Sq+'.top=PosY');
+  eval(Lq+'MENU'+Sq+'.top=PosY');
+} else {
+  Lq = "document.all.";
+  Sq = ".style";
+  document.getElementById('SHOW').style.left = sPosX+"px";
+  document.getElementById('MENU').style.left = sOffX+"px";
+  document.getElementById('SHOW').style.top = PosY+"px";
+  document.getElementById('MENU').style.top = PosY+"px";
+}
+function moveOnMenu() {
+  if (MenuX < PosX) {
+    MenuX = MenuX + increment;
+    if (is_NS5up) document.getElementById('MENU').style.left = MenuX+"px";
+    else eval(Lq+'MENU'+Sq+'.left=MenuX');
+    setTimeout('moveOnMenu()',speed);
+  }
+}
+function moveOffMenu() {
+  if (MenuX > OffX) {
+    MenuX = MenuX - increment;
+    if (is_NS5up) document.getElementById('MENU').style.left = MenuX+"px";
+    else eval(Lq+'MENU'+Sq+'.left=MenuX');
+    setTimeout('moveOffMenu()',speed);
+  }
+}
+function moveOffShow() {
+  if (SelX > OffX) {
+    SelX = SelX - increment;
+    if (is_NS5up) {
+      document.getElementById('SHOW').style.left = SelX+"px";
+    } else {
+      eval(Lq+'SHOW'+Sq+'.left=SelX');
+    }
+    setTimeout('moveOffShow()',speed);
+  }
+}
+function moveOnShow() {
+  if (SelX < PosX) {
+    SelX = SelX + increment;
+    if (is_NS5up) document.getElementById('SHOW').style.left = SelX+"px";
+    else eval(Lq+'SHOW'+Sq+'.left=SelX');
+    setTimeout('moveOnShow()',speed);
+  }
+}
+// -->
+</SCRIPT>
+<script language="JavaScript">
+<!-- Beginning
+
+today=new Date();
+
+var h = today.getHours();
+
+var m = today.getMinutes();
+
+var t = "  " + (h) + "<BLINK> 時 </BLINK>" + (m) + " 分";
+
+function initArray(){
+
+this.length=initArray.arguments.length
+
+for(var i=0;i<this.length;i++)
+
+this[i+1]=initArray.arguments[i] }
+
+var d=new initArray("星期日", "星期一","星期二", "星期三","星期四", "星期五", "星期六");
+
+document.write("您進站時間為 ",today.getYear()-11," 年 ",today.getMonth()+1," 月 ",today.getDate()," 日 ",d[today.getDay()+1]," ",t, "");
+
+// End -->
+</script>
+
+<script language="JavaScript">
+<!--
+var currentcolor = 0
+
+function initArray(n) {
+  this.length = n;
+  for (var i =1; i <= n; i++) {
+    this[i] = ' '
+  }
+}
+
+bgcolors = new initArray(15)
+bgcolors[0]="000000" //bgcolors[0]="ffffff"可以設定自己喜歡顏色的十六進位值
+bgcolors[1]="ffdead"
+bgcolors[2]="ffffff"
+bgcolors[3]="add8e6"
+bgcolors[4]="0000ff"
+bgcolors[5]="add8e6"
+bgcolors[6]="90ee90"
+bgcolors[7]="00ff00"
+bgcolors[8]="90ee90"
+bgcolors[9]="ffc0cb"
+bgcolors[10]="ff0000"
+bgcolors[11]="ffc0cb"
+bgcolors[12]="FFFFFF"
+bgcolors[13]="ffdead"
+bgcolors[14]="add8e6"
+
+function backgroundChanger() {
+document.bgColor = bgcolors[currentcolor];
+
+if (currentcolor < bgcolors.length-1) {
+currentcolor++
+setTimeout("backgroundChanger()", 100);
+}
+}
+
+backgroundChanger();
+//-->
+</script>
+
+
+
+<p id="p1"><a href="index.html">返回主頁面</a></p>
+</body>
+</html>

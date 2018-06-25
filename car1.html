@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>熱門車款</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('p.more').hide();
+   $('p.car').hide();
+   $('p.car1').hide();
+   $('p.car2').hide();
+   $('p.car3').hide();
+   $('p.car4').hide();
+   $('p.car5').hide();
+   $('a.short').hide();
+   $('a.more1').click(function() {
+      $('p.more').show('slow');
+      $(this).hide();
+      $('a.more2').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more2').click(function() {
+      $('p.car').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more3').click(function() {
+      $('p.car1').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more2').hide();
+      $('a.more4').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more4').click(function() {
+      $('p.car2').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more2').hide();
+      $('a.more5').hide();
+      $('a.more6').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more5').click(function() {
+      $('p.car3').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.more6').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more6').click(function() {
+      $('p.car4').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.more5').hide();
+      $('a.more7').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more7').click(function() {
+      $('p.car5').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.more2').hide();
+      $('a.more6').hide();
+      $('a.more5').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.short').click(function() {
+      $('p.more').hide('500');
+      $('p.car').hide('500');
+      $('p.car1').hide('500');
+      $('p.car2').hide('500');
+      $('p.car3').hide('500');
+      $('p.car4').hide('500');
+      $('p.car5').hide('500');
+      $('a').show();
+      $(this).hide();
+      return false;
+   });
+});
+         //圖片
+          var curIndex=0;
+          var imgArray = new Array();
+          var pics=8;
+
+          for(i=0;i<pics;i++)
+                {
+                    imgArray[i]=new Image();
+                  if(i<10)
+                        imgArray[i].src="images/pic0"+i+".jpeg";
+                  else
+                        imgArray[i].src="images/pic"+i+".jpeg";
+                }
+         function nextImage()
+                {
+                    curIndex++;
+                    curIndex=curIndex % pics;
+                    return(imgArray[curIndex].src);
+                }
+                function randomImage(){
+                    curIndex=Math.floor(Math.random()*imgArray.length);
+                    return(imgArray[curIndex].src);
+                }
+
+           </script>
+
+<style type="text/css">
+#p1 { font-size: 30pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+
+#a { font-size: 20pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+html {
+            height: 100%;
+        }
+body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+</style>
+</head>
+<body  background="images\bake.jpg">
+
+<p id="p1">熱門車款</p>
+<div id="show"></div>
+<center><img src="images\pic00.jpeg" alt=""onmousedown="this.src=nextImage()"
+                            onmouseover="this.src=randomImage()"></center>
+<div>
+<center><marquee align="middle" width="300" height="100" border="0" direction="up" SCROLLDELAY="100"
+ style="text-align:center;filter:Alpha(Opacity=200,FinishOpacity=0, Style=3, StartX=150,StartY=150, FinishX=0,FinishY=0); font-family:標楷體; color:red; font-size:20 pt" SCROLLAMOUNT="3" bgcolor="#66ff33">
+歡迎光臨,點擊圖片可換圖
+</marquee></center>
+<span id="field4" class="s20">
+<CENTER><input type="button" name="B1" value="問答" onclick="if(confirm('覺得本站好不好,好的話點確認不好點取消'))alert('謝謝你的支持');else alert('謝謝你的意見我們會改善');"></CENTER>
+</span>
+
+
+
+
+<center><p>本頁展示的車子分別是ALTIS X．CAMRY．SIENTA．RAV4．PRIUS．VIOS．YARIS。</p>
+<p class="more"id="p2">分別有雅致．經典．豪華．尊貴．X豪華．X尊貴<br>
+                       售價分別是．65.6萬．70.9萬．74.5萬．79.9萬．73.9萬．77.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+
+<p class="car"id="p2">分別有雅致．經典．豪華．尊貴<br>
+                       售價分別是．84.9萬．91.9萬．95.9萬．101.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+<p class="car1"id="p2">分別有5人座經典．5人座豪華．5人座豪華+．5人座尊貴．7人座豪華．7人座豪華+．7人座尊貴<br>
+                       售價分別是．64.9萬．66.9萬．70.9萬．76.9萬．77.9萬．79.9萬．85.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+<p class="car2"id="p2">分別有RAV4 2.0經典．RAV4 2.0豪華．RAV4 2.0尊爵．RAV4 2.5尊爵．RAV4 2.5旗艦4WD<br>
+                       售價分別是．84.9萬．96.9萬．100.9萬．109.9萬．119.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+<p class="car3"id="p2">只有單一版本 PRIUS<br>
+                       售價109.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+<p class="car4"id="p2">分別有雅致．經典．豪華．S<br>
+                       售價分別是．58.5萬．60.9萬．65.5萬．66.5萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+<p class="car5"id="p2">分別有雅致．經典．豪華<br>
+                       售價分別是．54.9萬．57.9萬．63.9萬<br>
+                       詳細規則請到各區的服務廠或是官網查詢</p>
+
+
+
+
+<center><a id="a1"href="#" class="more1">ALTIS X的售價內容</a>
+<a id="a1"href="#" class="more2">CAMRY的售價內容</a>
+<a id="a1"href="#" class="more3">SIENTA的售價內容</a>
+<a id="a1"href="#" class="more4">RAV4的售價內容</a>
+<a id="a1"href="#" class="more5">PRIUS的售價內容</a>
+<a id="a1"href="#" class="more6">VIOS的售價內容</a>
+<a id="a1"href="#" class="more7">YARIS的售價內容</a>
+<a id="a1" href="#" class="short">返回</a></center>
+<p id="p1"><a href="index.html">返回主頁面</a></p>
+</body>
+</html>

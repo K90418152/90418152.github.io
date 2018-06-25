@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<SCRIPT Language="JavaScript">
+function MM_displayStatusMsg(msgStr) { //v2.0
+status=msgStr;
+document.MM_returnValue = true;
+}
+function click() {
+if (event.button==2) {
+alert('客服專線XXX-XXXX-XXX');
+}
+}
+document.onmousedown=click
+</SCRIPT>
+
+
+<head>
+<meta charset="utf-8"/>
+<title>熱門車款</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script language:JavaScript>
+<!--
+today= new Date()
+dateValue=(today.getYear()-11)+"年"+(today.getMonth()+1)+"月"+today.getDate()+"日";
+window.alert("\n歡迎光臨FORD熱門車款\n\n以下介紹開始^^\n\n今天是"+dateValue);
+//-->
+</script>
+<script>
+$(document).ready(function() {
+   $('p.more').hide();
+   $('p.car').hide();
+   $('p.car1').hide();
+   $('p.car2').hide();
+   $('p.car3').hide();
+   $('a.short').hide();
+   $('a.more1').click(function() {
+      $('p.more').show('slow');
+      $(this).hide();
+      $('a.more2').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more2').click(function() {
+      $('p.car').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more4').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more3').click(function() {
+      $('p.car1').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more2').hide();
+      $('a.more4').hide();
+      $('a.short').show();
+      return false;
+   });
+   $('a.more4').click(function() {
+      $('p.car2').show('slow');
+      $(this).hide();
+      $('a.more1').hide();
+      $('a.more3').hide();
+      $('a.more2').hide();
+      $('a.short').show();
+      return false;
+   });
+
+
+   $('a.short').click(function() {
+      $('p.more').hide('500');
+      $('p.car').hide('500');
+      $('p.car1').hide('500');
+      $('p.car2').hide('500');
+      $('p.car3').hide('500');
+      $('a').show();
+      $(this).hide();
+      return false;
+   });
+});
+</script>
+
+
+<style type="text/css">
+#p1 { font-size: 30pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+
+#a { font-size: 20pt;
+    color: yellow;
+    background-color:steelblue;
+    text-align: center;
+}
+html {
+            height: 100%;
+        }
+body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+</style>
+<script type="text/javascript">
+             //循序播放陣列中指定的圖檔
+            var jsImg = new Array("images/fcar00.jpg","images/fcar01.jpg","images/fcar02.jpg","images/fcar03.jpg",
+            "images/fcar04.jpg",);
+            var jsImg_len = jsImg.length;  // 圖檔數量
+            // 要用另一個變數存，是不想在 function 中每次都要算陣列的大小
+            var i=2;                       //起始照片  2 為 003.jpg
+            //設定每兩秒執行一次sequentialImg() ，此行要在 function 之外
+            setInterval("sequentialImg()",2000);
+            function sequentialImg(){  //循序播放
+                document.getElementById("my_div").innerHTML  = "<img src='"+jsImg[i]+"' width=1000 height=500>";
+                    i++;
+                    if(i>=jsImg_len)  i=0;
+            }
+
+    </script>
+
+</head>
+<body >
+
+<p id="p1">熱門車款</p>
+<center><div id="my_div" ></div></center>
+<div>
+<center><p>本頁展示的車子分別是FOCUS．MONDEO．Escort．EcoSport</p>
+<p class="more"id="p2">FOCUS分別 FOCUS四門1.6L時尚經典型(接單生產)． FOCUS四門EcoBoost®180時尚經典型．
+                       FOCUS 1.6L五門時尚型．<br> FOCUS五門EcoBoost®180時尚型． FOCUS五門EcoBoost®180頂級運動型5個版本<br>
+                               售價分別是．69.9萬．79.9萬．67.9萬．75.9萬．89.9萬<br>
+                               詳細規則請到各區FORD的服務廠或是官網查詢</p>
+
+<p class="car"id="p2">MONDEO分別有 MONDEO EcoBoost ® 240．MONDEO 2.0L TDCi．MONDEO 2.0L Hybrid．MONDEO WAGON EcoBoost ®240．4個版本<br>
+                               售價分別是．125.9萬．132.9萬．139.9萬．135.9萬<br>
+                               詳細規則請到各區FORD的服務廠或是官網查詢</p>
+<p class="car1"id="p2">FIESTA分別有 FIESTA 1.5L 運動型．FIESTA EcoBoost® 125 運動型<br>
+                               售價分別是．64.8萬．69.9萬<br>
+                               詳細規則請到各區FORD的服務廠或是官網查詢</p>
+<p class="car2"id="p2">Escort分別有Escort_雅緻型．Escort_時尚型．2個版本<br>
+                               售價分別是．57.9萬．67.9萬<br>
+                               詳細規則請到各區FORD的服務廠或是官網查詢</p>
+<p class="car3"id="p2">EcoSport分別有EcoSport 1.5L 都會時尚型．EcoBoost 125 旗艦型．2個版本<br>
+                               售價$699,000 - $799,000<br>
+                               詳細規則請到各區FORD的服務廠或是官網查詢</p>
+
+
+
+
+<center><a id="a1"href="#" class="more1">FOCUS的售價內容</a>
+<a id="a1"href="#" class="more2">MONDEO的售價內容</a>
+<a id="a1"href="#" class="more3">Escort的售價內容</a>
+<a id="a1"href="#" class="more4">EcoSport的售價內容</a>
+<a id="a1" href="#" class="short">返回</a></center>
+<script language="JavaScript">
+if (!document.layers){
+
+
+Width=160; // 按鈕寬度
+Font='Verdana'; // 字型
+FontSize=15; // 字體大小
+AFontColor='#ffffff'; //字體顏色
+BFontColor='#ff3300'; // 滑鼠接觸連結字的變色
+CFontColor='#ff3300'; // 連結顏色
+FontWeight='normal';  //normal(常態字) or bold(粗體字)
+BackGround='ffcc00'; //按鈕背景色彩
+BorderDepth=4; //滑鼠接觸按鈕，所產生的立體寬度
+BorderLight='#fff9bb'; // 滑鼠接觸按鈕時，立體框上邊色彩
+BorderShad='#825700'; // 滑鼠接觸按鈕時，立體框下邊色彩
+
+
+function On(id){
+with(id.style){
+color=BFontColor;
+borderTopColor=BorderLight;
+borderLeftColor=BorderLight;
+borderRightColor=BorderShad;
+borderBottomColor=BorderShad;
+}
+}
+function Off(id){
+with(id.style){
+color=AFontColor;
+borderTopColor=BackGround;
+borderLeftColor=BackGround;
+borderRightColor=BackGround;
+borderBottomColor=BackGround;
+}
+}
+function Down(id){
+with(id.style){
+color=CFontColor;
+borderTopColor=BorderShad;
+borderLeftColor=BorderShad;
+borderRightColor=BorderLight;
+borderBottomColor=BorderLight;
+}
+}
+function Link(Url,Txt){
+document.write("<a href='"+Url+"' target='_blank'>" //目標框架設定
++"<div style='position:relative;left:0px; top:0px;"// 設定按鈕的位置
++"width:"+Width+"px;height:"+FontSize+"px;"
++"border-width:"+BorderDepth+"px;"
++"border-color:"+BackGround+";"
++"border-style:solid;" //框線的樣式
++"padding:"+FontSize/3+"px;"
++"background:"+BackGround+";"
++"font-family:"+Font+";"
++"font-size:"+FontSize+"px;"
++"line-height:"+FontSize*1+"px;"
++"font-weight:"+FontWeight+";"
++"text-align:center;"// 設定文字位置，center=置中，left=靠左，right=靠右。
++"color:"+AFontColor+";"
++"margin-top:0px;" //各按鈕的距離
++"cursor:crosshair'" //滑鼠接觸連結字的樣式變化
++"onMouseOver='javascript:On(this)'"
++"onMouseOut='javascript:Off(this)'"
++"onMouseDown='javascript:Down(this)'>"
++Txt+"</div></a>");
+}
+}
+function Temp(){
+alert("TEST");
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+if (!document.layers){
+//This table stops oddness in NS6!!!
+if (document.getElementById&&!document.all){
+document.write("<div style='position:relative'>"
++"<table border='0' cellpadding='0' cellspacing='0'>"
++"<tr><td valign='center'>");
+}
+
+
+Link('car1.html','TOYOTA熱門車款');
+Link('car2.html','HONDA熱門車款');
+Link('car4.html','NISSAN熱門車款');
+
+
+if (document.getElementById&&!document.all){
+document.write("</td></tr></table></div>");
+}
+}
+//-->
+</script>
+<script language="JavaScript">
+<!--
+org_Color=document.bgColor.substring(1.10)
+-->
+</script>
+<FORM>
+選擇背景色：
+<SELECT onChange="document.bgColor=this.options[this.selectedIndex].value">
+<OPTION>-請選擇-</OPTION>
+<OPTION VALUE="#FFEAD5">淡橙</OPTION>
+<OPTION VALUE="#FFFF00">黃色</OPTION>
+<OPTION VALUE="#80FF00">綠色</OPTION>
+<OPTION VALUE="#FF00FF">紫色</OPTION>
+<OPTION VALUE="#000000">黑色</OPTION>
+<OPTION VALUE="#EEEEEE">灰色</OPTION>
+<OPTION VALUE="#FFFFFF">白色</OPTION>
+</SELECT></FORM>
+<p>按右鍵有客服電話<p>
+
+<p id="p1"><a href="index.html">返回主頁面</a></p>
+
+</body>
+</html>
