@@ -1,0 +1,122 @@
+<script language="JavaScript">
+        <!-- 
+        CoLoUrS=new Array('00ff00','ff00ff','fff000','3366ff');
+        
+        var step=0.3,a_StEp=0.05,RunTime=0,currStep=0,Xpos=0,Ypos=0,cntr=70,count_a=0;
+        var count=0,move=1,Ay=0,Ax=0,dots=16;var x;brwsr=(document.layers)?1:0;
+        if (brwsr){
+        for (i=0; i < dots; i++){
+        document.write('<LAYER NAME="a'+i+'" LEFT=0 TOP=0 BGCOLOR=#3366ff CLIP="0,0,3,3"></LAYER>');
+        }
+        window.captureEvents(Event.MOUSEMOVE);
+        function nsMouse(evnt){
+         Xpos = evnt.pageX;
+         Ypos = evnt.pageY;
+         }
+        window.onMouseMove = nsMouse
+        }
+        else{
+        document.write('<div id="ys" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+        for (i=0; i < dots; i++){
+        document.write('<div id="ieDivs" style="position:absolute;top:0px;left:0px;width:3px;height:3px;background:#3366ff;font-size:3px"></div>');
+        }
+        document.write('</div></div>');
+        function ieMouse(){
+         Ypos=event.y;
+         Xpos=event.x;
+         }
+        window.document.onmousemove = ieMouse
+        }
+        
+        function MouseFollow(){
+        ay = Math.round(Ay+=(Ypos- Ay)* 4/40);
+        ax = Math.round(Ax+=(Xpos- Ax)* 4/40);
+        setTimeout('MouseFollow()',10);
+        }
+        
+        function colourStep(){
+        count+=move;
+        if (count >= dots) {count=0;count_a+=move}
+        if (count_a == CoLoUrS.length) count_a=0;
+        if (brwsr) document.layers["a"+count].bgColor=CoLoUrS[count_a];
+        else ieDivs[count].style.background=CoLoUrS[count_a];
+        setTimeout('colourStep()',100)
+        }
+        
+        function TwistnSpin(){
+        if (!brwsr) ys.style.top=document.body.scrollTop;
+        for (i=0; i < dots; i++) 
+         {
+         var allLayers=(document.layers)?document.layers["a"+i]:ieDivs[i].style;
+         allLayers.top=ay+cntr*Math.cos((currStep+i*4)/10.2)*Math.sin(currStep/20);
+         allLayers.left=ax+cntr*Math.sin((currStep+i*4)/10.2)*Math.cos(1+currStep/20);
+         }
+        currStep-=step;
+        setTimeout("TwistnSpin()",10);
+        }
+        function CombineNstart(){
+        MouseFollow();TwistnSpin();colourStep();
+        }
+        window.onload=CombineNstart;
+        // End Pretty -->
+        </script>
+        
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                (function () {
+                    var clickCount = 0;
+                    $('#mybutton').bind('click', function () {
+                        clickCount = clickCount + 1;
+                        $('#result').html(clickCount);
+                    });
+                } ());
+            });
+    </script>
+
+    
+                
+<style>
+    body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+</style>
+</head>
+<body  background="images\bake.jpg">
+  
+    <center><img src="images\NORN GTS 10W40.jpg" alt=""> </center>
+    <center>產品說明：這是一款最先進合成基引擎潤滑油，特別研發符合ACEA A3/B4-08的車廠製造規範同時也達到歐洲四期環保的要求。<br>
+            此產品專門設計給四行程汽油引擎和柴油引擎汽車使用，包括柴油直噴式引擎，例如共軌、HDI、CDI等；
+            主要關鍵功能在於這產品的添加劑配方使用低灰配方和優異的抗老化衰退性能配方。<br>
+            適用範圍：
+            這項產品適用大多數的汽油和柴油引擎車輛-是一般進氣式與增壓式引擎最佳選擇，<br>特別推薦給直噴式柴油引擎-共軌、HDI、CDI等車輛使用；由於這產品的最佳化黏度指數而使該產品全年度不分季節均適用。<br> 
+            產品特色：
+            各式種類引擎保護功能：擁有傑出與持久的引擎清潔力。<br>
+            低溫啟動：在低溫時潤滑油擁有優異的流動性。<br>
+            
+            產品規格： 10W40 B4 SN<br>
+            符合規範：*API:SN/CF<br>
+            　　　　　*MB:229.1<br>
+            　　　　　*VW:501.01/505.00<br>
+            　　　　　*ACEA:A3/B3-10<br>
+            　　　　　A3/B4-08<br><br>如需要請洽詢服務廠商或是配合的服務廠諮詢
+    </center>
+    <br>
+    <center><button id="mybutton">按讚</button></center>
+    <center><div id="result"></div>按讚數</center>
+    
+</body>
+</html>

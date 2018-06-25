@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                (function () {
+                    var clickCount = 0;
+                    $('#mybutton').bind('click', function () {
+                        clickCount = clickCount + 1;
+                        $('#result').html(clickCount);
+                    });
+                } ());
+            });
+    </script>
+<style>
+    body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+</style>
+</head>
+<body  background="images\bake.jpg">
+    <center><img src="\images\WOLF-CVT.png" alt=""> </center>
+    <center>產品說明：<br>
+        這是一款最先進合成變速箱潤滑油，非常仔細珍貴設計出來提供給配備有CVT變速箱的大都數車輛使用；
+        此外，它還可以用於無段變速箱箱、鋼帶或鏈帶變速箱，它提供了優秀的抗磨損保護功能和抗摩擦穩定特性。<br>
+        適用範圍：<br>
+        這款CVT變速箱油也常被汽車製造大廠推薦使用在他們的變速箱，
+        這產品配方是使用最先進珍貴的基礎油與添加劑，已符合歐洲和日本的CVT變速箱製造商的要求。 <br> 
+        產品特色：<br>
+        優異的抗磨損保護功能：擁有優異的抗磨損保護延長變速箱壽命。<br>
+        抗磨擦特性：換檔超順暢無頓挫顫動。<br>
+        延長變速箱油使用壽命：抗氧化與耐高溫延長潤滑油品使用時間。<br>
+        產品規格： CVT<br>
+        符合規範：<br>
+        AUDI: TL 52180<br>
+        DODGE: NS-2/CVTF+4<br>
+        FORD: CVT23<br>
+        FORD: CVT30<br>
+        FORD: MERCON C<br>
+        GM: SATURN DEX-CVT<br>
+        HONDA: HCF-2<br>
+        HONDA: HMMF<br>
+        HYUNDAI: SP-CVT1<br>
+        HYUNDAI: SP-III<br>
+        JEEP: NS-2/CVTF+4<br>
+        KIA: SP-CVT 1<br>
+        KIA: SP-III<br>
+        MB: 236.20<br>
+        MINI: EZL799A<br>
+        MITSUBISHI: CVTF-J1/SP-III<br>
+        NISSAN: NS-1<br>
+        NISSAN: NS-2<br>
+        PUNCH: EZL799A<br>
+        SUBARU: Lineartronic CVTF<br>
+        SUZUKI: TC/NS-2/CVT Green 1<br>
+        TOYOTA: TC<br>
+        VW: G 052 180<br>
+        VW: G 052 516<br><br>如需要請洽詢服務廠商或是配合的服務廠諮詢
+    </center>
+    <br>
+    <center><button id="mybutton">按讚</button></center>
+    <center><div id="result"></div>按讚數</center>
+    
+    
+</body>
+</html>

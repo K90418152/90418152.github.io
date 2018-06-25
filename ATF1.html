@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                (function () {
+                    var clickCount = 0;
+                    $('#mybutton').bind('click', function () {
+                        clickCount = clickCount + 1;
+                        $('#result').html(clickCount);
+                    });
+                } ());
+            });
+    </script>
+<style>
+    body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+</style>
+</head>
+<body  background="images\bake.jpg">
+    <center><img src="images\WOLF ATF DIII.jpg" alt=""> </center>
+    <center>產品說明：<br>
+        這是合成自動變速箱潤滑油擁有非常高的黏度指數，
+        在低溫或各種條件下其流動性佳確保維持在最優性能狀態；其優良的抗摩擦特性提供平滑順暢切換檔和駕駛舒暢性。<br>
+        適用範圍：<br>
+        這款自動變速箱油是根據製造商要求的規範與訂明的標準所生產之產品，
+        可用於自動變速箱、扭力轉換器、動力方向盤系統與液壓循環系統；符合GM ATF D-III、D-IIE和福特 Mercon規範要求。<br> 
+        產品特色：<br>
+        抗磨擦特性：換檔超順暢無頓挫顫動。<br>
+        優異的抗磨損保護功能：擁有優異的抗磨損保護延長變速箱壽命。<br>
+        延長變速箱油使用壽命：抗氧化與耐高溫延長潤滑油品使用時間。<br>
+        產品規格： ATF DIII<br>
+        符合規範：<br>
+        ALLISON : C4<br>
+        FORD: MERCON<br>
+        GM: 6417-M DEXRON III-G<br>
+        MAN: 339 V1/Z1<br>
+        MB: 236.5<br>
+        MB: 236.9<br>
+        VOITH: H55.6335xx<br>
+        VOLVO: STD 1273,40 (97340)<br>
+        VOLVO: STD 1273,41 (97341)<br>
+        ZF: TE-ML 03D<br>
+        ZF: TE-ML 04D<br>
+        ZF: TE-ML 09<br>
+        ZF: TE-ML 11B<br>
+        ZF: TE-ML 14A<br>
+        ZF: TE-ML 17C<br><br>如需要請洽詢服務廠商或是配合的服務廠諮詢
+    </center>
+    <br>
+    <center><button id="mybutton">按讚</button></center>
+    <center><div id="result"></div>按讚數</center>
+    
+    
+</body>
+</html>

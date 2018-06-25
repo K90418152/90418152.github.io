@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                (function () {
+                    var clickCount = 0;
+                    $('#mybutton').bind('click', function () {
+                        clickCount = clickCount + 1;
+                        $('#result').html(clickCount);
+                    });
+                } ());
+            });
+    </script>
+<style>
+    body {
+            background-image: images\bake.jpg;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+</style>
+</head>
+<body  background="images\bake.jpg">
+    <center><img src="images\WOLF 5W40 PI C3.jpg" alt=""> </center>
+    <center>產品說明：
+            這是一款最新一代全合成高性能引擎潤滑油，適用於所有汽油引擎車輛與無配備微粒過濾器DPF設備的柴油引擎車輛使用
+            ，它優異的配方從產品特質項目-流動點可看出在低溫時仍確保有超優的流動性，在高溫時一樣穩定。<br>
+            適用範圍：
+            這款潤滑油建議推薦給所有最新一代的汽油引擎車輛與無配備微粒過濾器DPF設備的柴油引擎車輛使用;
+            也適用於配備多汽缸和渦輪增壓引擎車輛使用，包括共軌引擎車輛，在超低溫氣候特別適合車輛使用。 <br>
+            產品特色：
+            各式種類引擎保護功能：擁有傑出的引擎清潔力和效能持久性。
+            優異的低溫啟動：低溫時仍保有超優的流動性。
+            功效衰退後延：延長換油時間。
+            <br>
+            產品規格： 5W40 PAO SN<br>
+            符合規範：<br>
+            *ACEA: A3/B4-10<br>
+            *API: SN/CF<br>
+            *BMW: LONGLIFE-01<br>
+            *MB: 226.5<br>
+            *MB: 229.5<br>
+            *OPEL: GM-LL-B-025<br>
+            *PORSCHE: A40<br>
+            *RENAULT: RN 0700<br>
+            *RENAULT: RN 0710<br>
+            *VW: 502 00<br>
+            *VW: 505 00<br><br>如需要請洽詢服務廠商或是配合的服務廠諮詢
+    </center>
+    <br>
+    <center><button id="mybutton">按讚</button></center>
+    <center><div id="result"></div>按讚數</center>
+    
+    
+</body>
+</html>
